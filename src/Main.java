@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,24 +18,31 @@ public class Main
 /**
  * This is the main function for the total program which mainly deals the card.
  * @param args: Takes an input parameter.
+ * @throws InputMisMatchException: when we tried to give invalid input other the specified action.
  */
-    public static void main(String[] args) 
+    public static void main(String[] args) throws InputMismatchException
     {
         Deck deck = new Deck();
         int action = 0;
-        do{
-            displayInstruction();
-            action = sc.nextInt();
-            if(AVAILABLE_ACTIONS.contains(action))
-            {
-                executeAction(action, deck);
-            }
-            else
-            {
-                System.out.println("Please enter valid actions:" + AVAILABLE_ACTIONS);
-            }
-        }while(action != 3);
-        System.out.println("Quit.......");
+        try {
+		     	do{
+		            displayInstruction();
+		            action = sc.nextInt();
+		            if(AVAILABLE_ACTIONS.contains(action))
+		            {
+		                executeAction(action, deck);
+		            }
+		            else
+		            {
+		                System.out.println("Please enter valid actions:" + AVAILABLE_ACTIONS);
+		            }
+		     	  }while(action != 3);
+		        System.out.println("Quit.......");
+        	}
+	    catch(InputMismatchException inmme)
+	    {
+	    	System.err.println("Error: Invalid input, Please give the correct input !!!");
+	    }
     }
 /**
  * This function basically performs the actions by taking the input from the above main program and from the Deck class to execute the action.
