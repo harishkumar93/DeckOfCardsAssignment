@@ -40,6 +40,8 @@ Action 2: Deal one card each time, if user chose deal a card before shuffle card
 Action 3: Quit card game.
 
 This program will handle all the possible Exception Handling like 
+
 "InputMismatchException, ArrayIndexOutOfBoundsException, IllegalArgumentException, NoSuchElementException" 
+
 and terminates the program smoothly withour throwing any other exceptions.
 
