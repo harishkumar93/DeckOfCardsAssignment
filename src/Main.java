@@ -30,21 +30,23 @@ public class Main
     {	
         Deck deck = new Deck();
         int action = 0;
-        try {
-		     	do{
-		            displayInstruction();
-		            action = sc.nextInt();
-		            if(AVAILABLE_ACTIONS.contains(action))
-		            {
-		                executeAction(action, deck);
-		            }
-		            else
-		            {
-		                System.out.println("Please enter valid actions:" + AVAILABLE_ACTIONS);
-		            }
-		     	  }while(action != 3);
-		        System.out.println("Quit !!!!!!!!!");
-        	}
+        try 
+        {
+	     	do
+	     	{
+	            displayInstruction();
+	            action = sc.nextInt();
+	            if(AVAILABLE_ACTIONS.contains(action))
+	            {
+	                executeAction(action, deck);
+	            }
+	            else
+	            {
+	                System.out.println("Please enter valid actions:" + AVAILABLE_ACTIONS);
+	            }
+	     	  }while(action != 3);
+	        System.out.println("Quit !!!!!!!!!");
+         }
 	    catch(InputMismatchException imme)
 	    {
 	    	System.err.println("Error: Invalid input, Please give the correct input !!!");
@@ -104,11 +106,13 @@ public class Main
  */
     private static void displayInstruction()
     {
+    	System.out.println("\n=======================================");
         System.out.println("Please choose any one of the actions:");
-        System.out.println("==================================");
+        System.out.println("=======================================");
         System.out.println("1. Shuffle The Whole Deck");
         System.out.println("2. Deal One Card");
         System.out.println("3. QUIT");
-        System.out.println("==================================");
+        System.out.println("=======================================");
     }
+    
 }
