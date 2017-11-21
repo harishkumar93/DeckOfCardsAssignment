@@ -5,7 +5,8 @@ import java.util.Random;
 /**
  * An object of Card Deck.  Simulate shuffle/deal with cards
  */
-public class Deck {
+public class Deck
+{
 	
 	/**
 	 * List of cards that are in the whole deck.
@@ -20,7 +21,8 @@ public class Deck {
 /**
  * Constructor to initialize the variables and the List declared in the above class. 
  */
-    public Deck(){
+    public Deck()
+    {
         random = new Random();
         cards = generateCards();
     }
@@ -44,12 +46,15 @@ public class Deck {
 /**
  * Shuffle function generally shuffles the values in the deck to any random order by using random function.
  */
-    public void shuffle(){
-        if(cards.size() == 0){
+    public void shuffle()
+    {
+        if(cards.size() == 0)
+        {
             System.out.println("No available cards on the deck, now shuffle all cards");
             cards = generateCards();
         }
-        for (int i = cards.size() - 1; i >= 0; i--) {
+        for (int i = cards.size() - 1; i >= 0; i--) 
+        {
             int j = random.nextInt(i + 1);
             Card card = cards.get(i);
             cards.set(i, cards.get(j));
@@ -62,9 +67,11 @@ public class Deck {
  * @param numberOfCardsToDeal: takes input one at a time and deal with it.
  * @return the FaceValue and Suit of the card if we deal with a card. Or else after 52nd attempt it may throw null value.
  */
-    public Card deal(int numberOfCardsToDeal){
+    public Card deal(int numberOfCardsToDeal)
+    {
         int i = 0;
-        while(!cards.isEmpty() && i < numberOfCardsToDeal ){
+        while(!cards.isEmpty() && i < numberOfCardsToDeal )
+        {
             i++;
             return cards.remove(0);
         }
@@ -78,7 +85,8 @@ public class Deck {
  * getCards function generally takes one card at a time from the list of cards.
  * @return the value of the cards.
  */
-    public List<Card> getCards(){
+    public List<Card> getCards()
+    {
         return cards;
     }
 }
