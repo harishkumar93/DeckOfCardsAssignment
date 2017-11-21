@@ -2,6 +2,7 @@
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Main 
@@ -22,9 +23,10 @@ public class Main
  * @throws InputMisMatchException: when we tried to give invalid input other the specified action.
  * @throws ArrayIndexOutOfBoundsException : when we tried to pass the the values which are more than the array size.
  * @throws IllegalArgumentException : when we tried to pass IllegalArguments in the input.
- * @throws 
+ * @throws NoSuchElementException : When we tried to pass element which is not there.
+ * 
  */
-    public static void main(String[] args) throws InputMismatchException, ArrayIndexOutOfBoundsException, IllegalArgumentException 
+    public static void main(String[] args) throws InputMismatchException, ArrayIndexOutOfBoundsException, IllegalArgumentException, NoSuchElementException 
     {	
         Deck deck = new Deck();
         int action = 0;
@@ -54,6 +56,10 @@ public class Main
         catch(IllegalArgumentException iae)
         {
         	System.err.println("Error: Please give the correct arguments !!!");
+        }
+        catch (NoSuchElementException nsee)
+        {
+        	System.err.println("Error: Please enter the element which is present !!!");
         }
     }
 /**
