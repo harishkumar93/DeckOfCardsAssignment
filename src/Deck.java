@@ -6,7 +6,7 @@ import java.util.Random;
  * An object of Card Deck.  Simulate shuffle/deal with cards
  */
 public class Deck {
-    private final static int NUMBER_OF_CARDS = 13;
+    //private final static int NUMBER_OF_CARDS = 13;
     private List<Card> cards;
     private Random random;
 
@@ -20,12 +20,16 @@ public class Deck {
 
         for(Suit suit : Suit.values()){
             
-                for(int i = 1; i <= NUMBER_OF_CARDS; i++){
+              /*  for(int i = 1; i <= NUMBER_OF_CARDS; i++){
                     Card card = new Card(i, suit);
-                    tmp.add(card);
+                    tmp.add(card);*/
+        	for (FaceValue face_value : FaceValue.values()) {
+        		Card card = new Card(face_value, suit);
+        		tmp.add(card);
+        	}
                 
             }
-        }
+        
         return  tmp;
     }
     public void shuffle(){
@@ -51,6 +55,9 @@ public class Deck {
             i++;
             return cards.remove(0);
         }
+        System.out.println("==============================================================");
+        System.out.println("No Card is Dealt, Please use the first option to shuffle.");
+        System.out.println("==============================================================");
         return null;
     }
 

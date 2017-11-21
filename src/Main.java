@@ -50,9 +50,9 @@ public class Main {
     private static void displayInstruction(){
         System.out.println("Please choose one of the actions:");
         System.out.println("==================================");
-        System.out.println("1. shuffle the deck");
-        System.out.println("2. deal with a card");
-        System.out.println("3. quit");
+        System.out.println("1. Shuffle The Whole Deck");
+        System.out.println("2. Deal One Card");
+        System.out.println("3. QUIT");
         System.out.println("==================================");
     }
 }
