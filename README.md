@@ -13,8 +13,9 @@ Please choose one of the actions:
 1. Shuffle the deck
 2. Deal with a card
 3. Quit
-action 1: shuffle current remaining cards on the deck.
 
-action 2: deal one card each time, if user chose deal a card before shuffle cards, the cards will be dealed in increasing rank order. If user chose deal a card after shuffle, the cards will be dealt in shuffled order.
+Action 1: shuffle current remaining cards on the deck.
 
-action 3: quit card game.
+Action 2: deal one card each time, if user chose deal a card before shuffle cards, the cards will be dealed in increasing rank order. If user chose deal a card after shuffle, the cards will be dealt in shuffled order.
+
+Action 3: quit card game.
