@@ -1,7 +1,7 @@
 # DeckOfCardsAssignment
 This is a sample program which deals with Deck of Cards.
 
-Instruction: Go to folder CardGame/src and run the following commands.
+Instruction: Go to folder DeckOfCards/src and run the following commands.
 
 run javac Main.java 
 run java Main
@@ -19,3 +19,4 @@ Action 1: shuffle current remaining cards on the deck.
 Action 2: deal one card each time, if user chose deal a card before shuffle cards, the cards will be dealed in increasing rank order. If user chose deal a card after shuffle, the cards will be dealt in shuffled order.
 
 Action 3: quit card game.
+
