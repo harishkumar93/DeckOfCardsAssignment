@@ -76,7 +76,7 @@ public class Deck
             return cards.remove(0);
         }
         System.out.println("==============================================================");
-        System.out.println("No Card is Dealt, Please use the first option to shuffle.");
+        System.out.println("No Card is Dealt, Please use the Option 1 to shuffle.");
         System.out.println("==============================================================");
         return null;
     }

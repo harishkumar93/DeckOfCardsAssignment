@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -19,9 +20,12 @@ public class Main
  * This is the main function for the total program which mainly deals the card.
  * @param args: Takes an input parameter.
  * @throws InputMisMatchException: when we tried to give invalid input other the specified action.
+ * @throws ArrayIndexOutOfBoundsException : when we tried to pass the the values which are more than the array size.
+ * @throws IllegalArgumentException : when we tried to pass IllegalArguments in the input.
+ * @throws 
  */
-    public static void main(String[] args) throws InputMismatchException
-    {
+    public static void main(String[] args) throws InputMismatchException, ArrayIndexOutOfBoundsException, IllegalArgumentException 
+    {	
         Deck deck = new Deck();
         int action = 0;
         try {
@@ -37,12 +41,20 @@ public class Main
 		                System.out.println("Please enter valid actions:" + AVAILABLE_ACTIONS);
 		            }
 		     	  }while(action != 3);
-		        System.out.println("Quit.......");
+		        System.out.println("Quit !!!!!!!!!");
         	}
-	    catch(InputMismatchException inmme)
+	    catch(InputMismatchException imme)
 	    {
 	    	System.err.println("Error: Invalid input, Please give the correct input !!!");
 	    }
+        catch(ArrayIndexOutOfBoundsException aiobe)
+        {
+        	System.err.println("Error: Please give the size with the specified bound !!!");
+        }
+        catch(IllegalArgumentException iae)
+        {
+        	System.err.println("Error: Please give the correct arguments !!!");
+        }
     }
 /**
  * This function basically performs the actions by taking the input from the above main program and from the Deck class to execute the action.
@@ -62,8 +74,9 @@ public class Main
                 card = deck.deal(1);
                 System.out.println("DEAL CARD: " + card + "\n");
                 break;
-            default:
-                break;
+            case 3:
+            	System.out.println("Bye !!!!");
+            	break;
         }
     }
 /**
@@ -85,7 +98,7 @@ public class Main
  */
     private static void displayInstruction()
     {
-        System.out.println("Please choose one of the actions:");
+        System.out.println("Please choose any one of the actions:");
         System.out.println("==================================");
         System.out.println("1. Shuffle The Whole Deck");
         System.out.println("2. Deal One Card");
