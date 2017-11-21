@@ -18,17 +18,14 @@ public class Deck {
     private List<Card> generateCards(){
         List<Card> tmp = new ArrayList<>();
 
-        for(Suit suit : Suit.values()){
-            
-              /*  for(int i = 1; i <= NUMBER_OF_CARDS; i++){
-                    Card card = new Card(i, suit);
-                    tmp.add(card);*/
-        	for (FaceValue face_value : FaceValue.values()) {
+        for(Suit suit : Suit.values())
+        {
+        	for (FaceValue face_value : FaceValue.values()) 
+        	{
         		Card card = new Card(face_value, suit);
         		tmp.add(card);
         	}
-                
-            }
+        }
         
         return  tmp;
     }
@@ -41,7 +38,6 @@ public class Deck {
 
         for (int i = cards.size() - 1; i >= 0; i--) {
             int j = random.nextInt(i + 1);
-
             Card card = cards.get(i);
             cards.set(i, cards.get(j));
             cards.set(j, card);

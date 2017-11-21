@@ -25,7 +25,6 @@ public class Main {
 
     private static void executeAction(int action, Deck deck){
         Card card = null;
-
         switch (action){
             case 1:
                 deck.shuffle();
